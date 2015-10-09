@@ -5,7 +5,7 @@
 
   root.BenchStore = $.extend({}, EventEmitter.prototype, {
     all: function (){
-      return _benches.slice();
+      return _benches.slice(0);
     },
 
     addChangeListener: function(callback){
@@ -18,8 +18,8 @@
 
     dispatcherID: AppDispatcher.register(function (payload) {
       if(payload.actionType === BenchConstants.BENCHES_RECEIVED) {
-        BenchStore.emit(CHANGE_EVENT);
         _benches = payload.benches;
+        BenchStore.emit(CHANGE_EVENT);
       }
     })
 
