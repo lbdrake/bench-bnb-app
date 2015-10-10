@@ -6,6 +6,11 @@ window.Map = React.createClass({
     });
   },
 
+  updateBenches: function () {
+    this.setState({benches: BenchStore.all()});
+    this.updateMarkers();
+  },
+
   componentDidMount: function(){
     var map = React.findDOMNode(this.refs.map);
 
@@ -16,17 +21,25 @@ window.Map = React.createClass({
 
     this.map = new google.maps.Map(map, mapOptions);
 
+    this.map.addListener('idle', this.fetchingWithinBounds);
+
     BenchStore.addChangeListener(this.updateBenches);
+  },
+
+  fetchingWithinBounds: function() {
+    var bounds = this.map.getBounds();
+    var formattedBounds = { northEast: {lat: bounds.getNorthEast().J,
+                                        lon: bounds.getNorthEast().M},
+                            southWest: {lat: bounds.getSouthWest().J,
+                                        lon: bounds.getSouthWest().M }};
+    ApiUtil.fetchBenches(formattedBounds);
+    this.updateBenches();
   },
 
   componentWillUnmount: function () {
     BenchStore.removeChangeListener(this.updateBenches);
   },
 
-  updateBenches: function () {
-    this.setState({benches: BenchStore.all()});
-    this.updateMarkers();
-  },
 
   updateMarkers: function () {
     this.state.benches.forEach (function(bench) {
