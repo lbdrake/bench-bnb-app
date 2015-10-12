@@ -22,9 +22,17 @@ window.Map = React.createClass({
     this.map = new google.maps.Map(map, mapOptions);
 
     this.map.addListener('idle', this.fetchingWithinBounds);
-
+    this.map.addListener('click', this.goToNewBenchForm)
     BenchStore.addChangeListener(this.updateBenches);
   },
+
+  goToNewBenchForm: function (e){
+    // debugger;
+    var clickedLat = e.latLng.J;
+    var clickedLon = e.latLng.M;
+    this.props.handleMapClick({lat: clickedLat, lon: clickedLon});
+    // go to form page and send (lat, lon) to prefill forms!
+      },
 
   fetchingWithinBounds: function() {
     var bounds = this.map.getBounds();

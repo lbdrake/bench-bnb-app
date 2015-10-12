@@ -20,6 +20,9 @@
       if(payload.actionType === BenchConstants.BENCHES_RECEIVED) {
         _benches = payload.benches;
         BenchStore.emit(CHANGE_EVENT);
+      } else if (payload.actionType === BenchConstants.SINGLE_BENCH_RECEIVED){
+        _benches.push(payload.bench);
+        BenchStore.emit(CHANGE_EVENT);
       }
     })
 
