@@ -7,8 +7,12 @@ $(function () {
   var App = React.createClass({
     render: function () {
       return (
-        <div>
-          <header><h1>VortexBnB</h1></header>
+        <div className="main group">
+          <header>
+            <h1>VortexBnB</h1>
+            <h3>Find Your Spiral Energy Hotspot</h3>
+
+          </header>
           {this.props.children}
         </div>
       );

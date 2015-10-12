@@ -65,9 +65,67 @@
  	border-spacing: 0;
  }
 
+ .group:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
 /* End of reset */
+
+
+.main {
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+  /*background-color: oldlace;*/
+}
+
+h1 {
+  color: indigo;
+  font-size: 2em;
+}
+
+h3 {
+  color: salmon;
+}
 
 .map {
   height: 500px;
   width: 500px;
+  float: left;
+}
+
+.benchlistitem {
+  border: 1px solid tan;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.25em;
+  float: left;
+
+}
+
+.benchlistitem:hover {
+  background-color: salmon;
+}
+
+.benchlist ul {
+  float: right;
+  left: 520px;
+  background-color: wheat;
+  max-height: 500px;
+  width: 400px;
+  overflow: scroll;
+  }
+
+
+.benchform > input, .benchform > select {
+  display: block;
+  padding: 5px;
+  margin: 10px 0px 10px 0px;
+  clear: both;
+}
+.benchform {
+  /*position: relative;*/
+  padding: 20 px;
 }

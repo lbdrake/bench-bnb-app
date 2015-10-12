@@ -36,7 +36,7 @@ window.BenchForm = React.createClass({
       this.selected = "selected";
     }
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="benchform">
         <input type="text" id="lat" name="bench[lat]" placeholder="Enter latitude:" value={this.state.lat} onChange={this.updateLat} />
         <input type="text" id="long" value={this.state.lon} placeholder="Enter longitude:" onChange={this.updateLon} />
         <input type="text" id="description" value={this.state.description} placeholder="Enter description:" onChange={this.updateDescription} />

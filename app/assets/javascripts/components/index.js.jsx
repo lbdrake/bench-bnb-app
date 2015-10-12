@@ -20,16 +20,15 @@ window.Index = React.createClass({
 
   render: function (){
     return (
-      <div>
-        <p>We are in the index.js.jsx file</p>
-        <div>
-          {this.state.benches.map(function(bench) {
-              return (
-                <li key={bench.lat}>{bench.description}</li>
-                );
-            })
-          }
-        </div>
+      <div className="benchlist">
+          <ul>
+            {this.state.benches.map(function(bench) {
+                return (
+                  <li className="benchlistitem" key={bench.id}>{bench.description}</li>
+                  );
+              })
+            }
+          </ul>
       </div>
     );
   }
