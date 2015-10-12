@@ -1,5 +1,4 @@
 window.Map = React.createClass({
-
   getInitialState: function () {
     return ({
       benches: BenchStore.all()
@@ -31,7 +30,6 @@ window.Map = React.createClass({
     var clickedLat = e.latLng.J;
     var clickedLon = e.latLng.M;
     this.props.handleMapClick({lat: clickedLat, lon: clickedLon});
-    // go to form page and send (lat, lon) to prefill forms!
       },
 
   fetchingWithinBounds: function() {

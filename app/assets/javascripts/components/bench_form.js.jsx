@@ -28,6 +28,11 @@ window.BenchForm = React.createClass({
                         description: this.state.description,
                         seating: parseInt(this.state.seating)});
     this.setState({lat: "", lon: "", description: "", seating: ""});
+    this.handleNewBenchSubmit();
+  },
+
+  handleNewBenchSubmit: function() {
+    this.props.history.pushState(null, "/");
   },
 
   render: function(){
