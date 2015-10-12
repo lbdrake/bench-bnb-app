@@ -43,9 +43,7 @@ window.Map = React.createClass({
 
   updateMarkers: function () {
     var markers = markers || [];
-    if (markers) {
-      this.reset_markers(markers);
-    }
+    this.reset_markers(markers);
 
     this.state.benches.forEach (function(bench) {
       var myLatLng = { lat: bench.lat, lng: bench.lon };
