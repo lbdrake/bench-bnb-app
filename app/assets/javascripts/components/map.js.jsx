@@ -42,6 +42,11 @@ window.Map = React.createClass({
 
 
   updateMarkers: function () {
+    var markers = markers || [];
+    if (markers) {
+      this.reset_markers(markers);
+    }
+
     this.state.benches.forEach (function(bench) {
       var myLatLng = { lat: bench.lat, lng: bench.lon };
       var marker = new google.maps.Marker({
@@ -51,9 +56,16 @@ window.Map = React.createClass({
       });
 
       marker.setMap(this.map);
+      markers.push(marker);
     }.bind(this));
-
     },
+
+  reset_markers: function (markers) {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+    markers = [];
+  },
 
   render: function () {
     return (
