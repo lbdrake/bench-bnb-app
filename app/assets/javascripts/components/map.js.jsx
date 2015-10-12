@@ -22,7 +22,7 @@ window.Map = React.createClass({
     this.map = new google.maps.Map(map, mapOptions);
 
     this.map.addListener('idle', this.fetchingWithinBounds);
-    this.map.addListener('click', this.goToNewBenchForm)
+    this.map.addListener('click', this.goToNewBenchForm);
     BenchStore.addChangeListener(this.updateBenches);
   },
 
