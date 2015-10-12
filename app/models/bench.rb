@@ -1,5 +1,6 @@
 class Bench < ActiveRecord::Base
-  validates :description, :lat, :lon, presence: true
+  validates :description, :lat, :lon, :seating, presence: true
+  validates :seating, inclusion: {in: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
 
   def self.in_bounds(bounds)
 
