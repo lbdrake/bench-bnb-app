@@ -19,7 +19,7 @@ ApiUtil = {
         ApiActions.receiveSingleBench(response);
       },
       error: function (response) {
-        console.log("Error in api_util.createBench")
+        console.log("Error in api_util.createBench");
       }
     });
   }
