@@ -1,4 +1,5 @@
 == BenchBNB
 
 * Tired? Find a bench and watch the world go by with BenchBNB
+* Ruby on Rails App Build with React/Flux Framework
 * Integrates with Google Maps API to show locations of available benches around SF
