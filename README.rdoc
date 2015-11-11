@@ -1,4 +1,4 @@
-# BenchBNB
+== BenchBNB
 
 * Tired? Find a bench and watch the world go by with BenchBNB
 * Integrates with Google Maps API to show locations of available benches around SF
